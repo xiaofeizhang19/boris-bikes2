@@ -1,5 +1,3 @@
 ### BORIS BIKES PROGRAM
 
-this is my version 
-
-This is my version
+Day 2 of Boris Bike Challenge. Reached ex 12.
