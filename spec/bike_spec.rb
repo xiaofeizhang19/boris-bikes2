@@ -1,4 +1,5 @@
 require_relative "../lib/boris_bikes"
+require_relative "../lib/bike"
 
 describe Bike do
   it "responds to working?" do
