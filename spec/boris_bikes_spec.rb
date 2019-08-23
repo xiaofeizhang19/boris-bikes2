@@ -22,7 +22,7 @@ describe DockingStation do
     expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 
-  describe 'initialization' do 
+  describe 'initialization' do
     subject { DockingStation.new }
     let(:bike) { Bike.new }
     it 'defaults capacity' do
@@ -53,7 +53,7 @@ describe DockingStation do
 
     it 'releases a bike' do
       bike = Bike.new
-      subject.dock(bike)
+        subject.dock(bike)
       expect(subject.release_bike).to eq bike
     end
 

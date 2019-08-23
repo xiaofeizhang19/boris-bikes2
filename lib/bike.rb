@@ -1,5 +1,5 @@
-
 class Bike
+
   def working?
     return true
   end
@@ -11,5 +11,5 @@ class Bike
   def broken?
     @broken
   end
-end
 
+end

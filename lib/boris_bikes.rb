@@ -1,4 +1,3 @@
-require 'bike'
 
 class DockingStation
   attr_reader :capacity
@@ -11,7 +10,7 @@ class DockingStation
 
   def release_bike
     fail 'No bikes available' if empty?
-    fail 'Bike is broken' if @bikes.pop.broken?
+    fail 'Bike is broken' if @bikes[-1].broken?
     @bikes.pop
   end
 
