@@ -1,5 +1,7 @@
 class Bike
 
+attr_reader :broken
+
   def working?
     return true
   end
