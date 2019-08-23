@@ -1,5 +1,5 @@
-require_relative "../lib/boris_bikes"
-require_relative "../lib/bike"
+require "boris_bikes"
+require "bike"
 
 describe Bike do
   it "responds to working?" do

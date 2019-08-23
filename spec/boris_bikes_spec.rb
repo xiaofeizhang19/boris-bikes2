@@ -1,21 +1,21 @@
-require_relative "../lib/boris_bikes"
+require "boris_bikes"
 
 describe DockingStation do
   it "responded to release_bike method" do
     expect(DockingStation.new).to respond_to(:release_bike)
   end
 
-  it "responds to dock_bike" do
-    expect(DockingStation.new).to respond_to(:dock_bike)
+  it "responds to dock" do
+    expect(DockingStation.new).to respond_to(:dock)
   end
 
-  it "dock_bike takes an argument" do
-    expect(DockingStation.new).to respond_to(:dock_bike).with(1).argument
+  it "dock takes an argument" do
+    expect(DockingStation.new).to respond_to(:dock).with(1).argument
   end
 
   it "check bikes at docking station" do
     bike = Bike.new
-    expect((DockingStation.new).dock_bike(bike)).to eq [bike]
+    expect((DockingStation.new).dock(bike)).to eq [bike]
   end
 
   it "allows user to set the capacity" do
@@ -27,9 +27,9 @@ describe DockingStation do
     let(:bike) { Bike.new }
     it 'defaults capacity' do
       described_class::DEFAULT_CAPACITY.times do
-        subject.dock_bike(bike)
+        subject.dock(bike)
       end
-      expect{ subject.dock_bike(bike) }.to raise_error 'Docking station full'
+      expect{ subject.dock(bike) }.to raise_error 'Docking station full'
     end
   end
 #     it 'has a variable capacity' do
@@ -39,10 +39,10 @@ describe DockingStation do
 #   end
 # end
 
-  describe '#dock_bike' do
+  describe '#dock' do
     it 'raises an error when full' do
-      subject.capacity.times { subject.dock_bike Bike.new }
-      expect { subject.dock_bike Bike.new }.to raise_error 'Docking station full'
+      subject.capacity.times { subject.dock Bike.new }
+      expect { subject.dock Bike.new }.to raise_error 'Docking station full'
     end
   end
 
@@ -53,7 +53,7 @@ describe DockingStation do
 
     it 'releases a bike' do
       bike = Bike.new
-      subject.dock_bike(bike)
+      subject.dock(bike)
       expect(subject.release_bike).to eq bike
     end
   end
