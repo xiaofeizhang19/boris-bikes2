@@ -1,3 +1,4 @@
+require 'bike'
 
 class DockingStation
   attr_reader :capacity

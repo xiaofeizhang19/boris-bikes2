@@ -1,4 +1,4 @@
-require "boris_bikes"
+require "docking_station"
 require "bike"
 
 describe Bike do
@@ -12,4 +12,11 @@ describe Bike do
     subject.report_broken
     expect(subject).to be_broken
   end
+
+  it "fixes the broken bike" do
+    subject.report_broken
+    subject.fix
+    expect(subject.broken?).to eq false
+  end
+
 end
